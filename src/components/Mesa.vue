@@ -65,23 +65,23 @@ const calculaVencedor = () => {
 
   if (jogadasOrdenadas.some(jogada => jogada.valor === manilha.value)) {
     vencedor = retornaVencedorDaManilha(jogadasOrdenadas);
-    alert(`vencedor: ${vencedor.valor} de ${vencedor.naipe.nome}`);
+    // alert(`vencedor: ${vencedor.valor} de ${vencedor.naipe.nome}`);
     return;
   }
 
   if (jogadasOrdenadas[2].valor === vencedor.valor) {
-    alert('EMPACHOU!')
+    // alert('EMPACHOU!')
     return
   } else {
-    alert(`vencedor: ${vencedor.valor} de ${vencedor.naipe.nome}`)
+    // alert(`vencedor: ${vencedor.valor} de ${vencedor.naipe.nome}`)
     if (vencedor === jogadaPlayer1.value) {
-      alert('player 1 venceu')
+      // alert('player 1 venceu')
     } else if (vencedor === jogadaPlayer2.value) {
-      alert('player 2 venceu')
+      // alert('player 2 venceu')
     } else if (vencedor === jogadaPlayer3.value) {
-      alert('player 3 venceu')
+      // alert('player 3 venceu')
     } else if (vencedor === jogadaPlayer4.value) {
-      alert('player 4 venceu')
+      // alert('player 4 venceu')
     }
   }
 }
@@ -178,87 +178,71 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="bg-green-300 w-[100%] h-[100vh] items-center justify-center flex">
-    <!-- PLAYER 1 -->
-    <div class="absolute bg-blue-400 inset-x-40 bottom-0 h-40 flex items-center justify-center">
-      <div class="w-6 h-6 rounded-full bg-yellow-300" v-if="turno == 1"></div>
-      <div class="flex items-center flex-col">
-        <div class="flex flex-row">
-          <div v-for="carta in cartasBaixo" @click="jogaCarta(carta, 1)">
-            <Carta :carta="carta" />
-          </div>
-        </div>
-        <div class="text-xl">Player 1</div>
-      </div>
-    </div>
-    <div class="absolute bg-red-400 w-40 bottom-60 h-40 flex justify-center items-center">
-      <div @click="tiraCarta(1)">
-        <Carta :carta="jogadaPlayer1" />
+  <div class="bg-green-300 w-[100%] h-[100vh] flex">
+
+    <div class="w-[14%] bg-green-800 flex flex-col items-center justify-center">
+      <div class="w-6 h-6 bg-yellow-300 rounded-full" v-if="turno == 2"></div>
+      <div class="text-xl">Player 2</div>
+      <div v-for="carta in cartasEsquerda" @click="jogaCarta(carta, 2)">
+        <Carta horizontal :carta="carta" />
       </div>
     </div>
 
-    <!-- PLAYER 2 -->
-    <div class="absolute bg-green-400 inset-y-40 left-0 w-40 flex-col flex items-center justify-center">
-      <div class="w-6 h-6 rounded-full bg-yellow-300" v-if="turno == 2"></div>
-      <div class="flex items-center flex-row">
-        <div class="flex flex-col">
-          <div class="text-xl">Player 2</div>
-          <div v-for="carta in cartasEsquerda" @click="jogaCarta(carta, 2)">
-            <Carta horizontal :carta="carta" />
+    <div class="w-full flex flex-col  bg-green-800">
+      <div class="h-1/3 bg-green-800 flex justify-center items-center">
+        <div class="flex items-center flex-col">
+          <div class="text-xl">Player 3</div>
+          <div class="w-6 h-6 bg-yellow-300 rounded-full" v-if="turno == 3"></div>
+          <div class="flex flex-row">
+            <div v-for="carta in cartasTopo" @click="jogaCarta(carta, 3)">
+              <Carta :carta="carta" />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="absolute bg-red-400 w-40 left-[35vw] h-40 flex justify-center items-center">
-      <div @click="tiraCarta(2)">
-        <Carta :carta="jogadaPlayer2" />
-      </div>
-    </div>
+      <div class="h-full w-full bg-green-800 rounded-xl flex items-center justify-center">
 
-    <!-- PLAYER 3 -->
-    <div class="absolute bg-red-400 inset-x-40 top-0 h-40 flex justify-center items-center">
-      <div class="w-6 h-6 rounded-full bg-yellow-300" v-if="turno == 3"></div>
-      <div class="flex items-center flex-col">
-        <div class="text-xl">Player 3</div>
-        <div class="flex flex-row">
-          <div v-for="carta in cartasTopo" @click="jogaCarta(carta, 3)">
-            <Carta :carta="carta" />
+        <div class="w-full flex justify-center items-center " @click="tiraCarta(2)">
+          <Carta horizontal :carta="jogadaPlayer2" />
+        </div>
+        <div class="h-full w-1/3 flex flex-col items-center justify-center">
+          <div class="h-full flex flex-col justify-center items-center " @click="tiraCarta(3)">
+            <Carta :carta="jogadaPlayer3" />
           </div>
+          <div class="w-60 flex items-center justify-center">
+            <div class="border-black border-4 bg-pink-300 w-20 h-28 mx-2 flex items-center justify-center">
+              {{ baralho.length }}
+            </div>
+            <Carta v-if="vira" :carta="vira" />
+          </div>
+          <div class="h-full flex flex-col justify-center items-center " @click="tiraCarta(1)">
+            <Carta :carta="jogadaPlayer1" />
+          </div>
+        </div>
+        <div class="w-full flex justify-center items-center " @click="tiraCarta(4)">
+          <Carta horizontal :carta="jogadaPlayer4" />
+        </div>
+      </div>
+      <div class="h-1/3 flex justify-center items-center bg-green-800">
+        <div class="flex items-center flex-col">
+          <div class="flex flex-row">
+            <div v-for="carta in cartasBaixo" @click="jogaCarta(carta, 1)">
+              <Carta :carta="carta" />
+            </div>
+          </div>
+          <div class="text-xl">Player 1</div>
+          <div class="w-6 h-6 bg-yellow-300 rounded-full" v-if="turno == 1"></div>
         </div>
       </div>
     </div>
-    <div class="absolute bg-red-400 w-40 top-60 h-40 flex justify-center items-center">
-      <div @click="tiraCarta(3)">
-        <Carta :carta="jogadaPlayer3" />
-      </div>
-    </div>
 
-    <!-- PLAYER 4 -->
-    <div class="absolute bg-green-400 inset-y-40 right-0 w-40 flex-col flex items-center justify-center">
-      <div class="w-6 h-6 rounded-full bg-yellow-300" v-if="turno == 4"></div>
-      <div class="flex items-center flex-row">
-        <div class="flex flex-col">
-          <div class="text-xl">Player 4</div>
-          <div v-for="carta in cartasDireita" @click="jogaCarta(carta, 4)">
-            <Carta horizontal :carta="carta" />
-          </div>
-        </div>
+    <div class="w-[14%]  bg-green-800 flex flex-col items-center justify-center">
+      <div class="w-6 h-6 bg-yellow-300 rounded-full" v-if="turno == 4"></div>
+      <div class="text-xl">Player 4</div>
+      <div v-for="carta in cartasDireita" @click="jogaCarta(carta, 4)">
+        <Carta horizontal :carta="carta" />
       </div>
     </div>
-    <div class="absolute bg-red-400 w-40 right-[35vw] h-40 flex justify-center items-center">
-      <div @click="tiraCarta(4)">
-        <Carta :carta="jogadaPlayer4" />
-      </div>
-    </div>
-
-    <!-- MESA -->
-    <div class="bg-yellow-200 w-[50vw] h-[60vh] flex items-center justify-center">
-      <div class="border-black border-4 bg-pink-300 w-24 h-32 mx-2 flex items-center justify-center">
-        {{ baralho.length }}
-      </div>
-      <Carta v-if="vira" :carta="vira" class="border-black border-4 bg-gray-100 w-24 h-32 mx-2" />
-    </div>
-
 
   </div>
 </template>

@@ -1,12 +1,4 @@
 <script setup>
-import { UseDraggable } from '@vueuse/components'
-import { useElementBounding } from '@vueuse/core'
-import { onMounted, ref, computed } from 'vue';
-
-const spot = ref(null)
-const { x, y } = useElementBounding(spot)
-const initialValue = ref({ x: 0, y: 0 })
-
 const props = defineProps({
 	carta: {
 		type: Object,
@@ -16,15 +8,6 @@ const props = defineProps({
 		type: Boolean,
 		default: false,
 	},
-	draggable: {
-		type: Boolean,
-		default: false,
-	},
-})
-
-onMounted(() => {
-	initialValue.value.x = x.value - 70
-	initialValue.value.y = y.value - 65
 })
 
 const retornaImagem = (carta) => {
@@ -56,11 +39,7 @@ const retornaImagem = (carta) => {
 </script>
 
 <template>
-	<div ref="spot">
+	<div>
+		<img :class="horizontal ? 'rotate-90' : 'mx-4'" class="w-20" :src="retornaImagem(carta)" />
 	</div>
-	<UseDraggable :style="draggable ? 'position: fixed' : ''" :initialValue="initialValue" v-slot="{ x, y }">
-		<div class=" hover:bg-blue-100 ">
-			<img :class="horizontal ? 'rotate-90' : 'mx-4'" class="w-24" :src="retornaImagem(carta)" />
-		</div>
-	</UseDraggable>
 </template>
