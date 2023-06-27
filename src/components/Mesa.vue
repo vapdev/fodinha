@@ -23,6 +23,9 @@ const timeVencedorTurno3 = ref(null)
 const passandoPonto = ref(false)
 const timeVencedorRodada = ref(null)
 
+import { useMatchStore } from '../stores/match.js'
+const match = useMatchStore()
+
 const atribuiTimeVencedorTurno = (time = null) => {
   if (jogadaVencedora.value.jogador === 1 || jogadaVencedora.value.jogador === 3) {
     time = 'A'
@@ -69,16 +72,18 @@ const contaPontos = () => {
     countTimeB++
   }
   if (countTimeA > countTimeB) {
-    pontosTimeA.value++;
+    match.incrementarPontosTimeA();
     timeVencedorRodada.value = 'A'
   } else {
-    pontosTimeB.value++;
+    match.incrementarPontosTimeB();
     timeVencedorRodada.value = 'B'
   }
   passandoPonto.value = true
   setTimeout(() => {
     passandoPonto.value = false
   }, 5000)
+  embaralha()
+  darAsCartas()
 }
 
 
@@ -245,12 +250,14 @@ const mapeiaValor = (valor) => {
   if (valor === '3') return 10
 }
 const baralho = ref([])
-for (let naipe of naipes) {
-  for (let valor of valores) {
-    baralho.value.push({ naipe, valor })
+const embaralha = () => {
+  for (let naipe of naipes) {
+    for (let valor of valores) {
+      baralho.value.push({ naipe, valor })
+    }
   }
+  baralho.value = baralho.value.sort(() => Math.random() - 0.5)
 }
-baralho.value = baralho.value.sort(() => Math.random() - 0.5)
 
 const darAsCartas = () => {
   cartasPlayer1.value = []
@@ -275,6 +282,7 @@ const pescarCarta = () => {
 }
 
 onMounted(() => {
+  embaralha()
   darAsCartas()
 })
 </script>
@@ -354,9 +362,9 @@ onMounted(() => {
       </div>
       <div class="w-[1vw] h-[1vw] bg-yellow-300 rounded-full" v-if="turno == 4"></div>
       <div class="absolute bottom-[1.5vw] mr-[5vw] text-[1vw] text-white text-right">
-        <div class="">1º rodada: Time {{ timeVencedorTurno1 }} </div>
-        <div class="">2º rodada: Time {{ timeVencedorTurno2 }} </div>
-        <div class="">3º rodada: Time {{ timeVencedorTurno3 }} </div>
+        <div class="">1º rodada:<span v-if="timeVencedorTurno1"> Time {{ timeVencedorTurno1 }} </span></div>
+        <div class="">2º rodada:<span v-if="timeVencedorTurno2"> Time {{ timeVencedorTurno2 }} </span></div>
+        <div class="">3º rodada:<span v-if="timeVencedorTurno3"> Time {{ timeVencedorTurno3 }} </span></div>
       </div>
     </div>
   </div>
