@@ -2,7 +2,7 @@
 const props = defineProps({
 	carta: {
 		type: Object,
-		default: () => ({ naipe: '', valor: '' }),
+		default: null,
 	},
 	horizontal: {
 		type: Boolean,
@@ -13,7 +13,7 @@ const props = defineProps({
 const retornaImagem = (carta) => {
 	let naipe = ''
 	if (!carta) {
-		return ''
+		return `./cards/FUNDO.svg`
 	}
 	if (carta.naipe.nome === 'OUROS') {
 		naipe = 'DIAMOND'
