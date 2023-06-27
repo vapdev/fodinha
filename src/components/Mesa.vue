@@ -150,22 +150,6 @@ const darAsCartas = () => {
     manilha.value = valores[0]
 }
 
-const tiraCarta = (jogador) => {
-  if (jogador === 1 && jogadaPlayer1.value) {
-    cartasBaixo.value.push(jogadaPlayer1.value)
-    jogadaPlayer1.value = null
-  } else if (jogador === 2 && jogadaPlayer2.value) {
-    cartasEsquerda.value.push(jogadaPlayer2.value)
-    jogadaPlayer2.value = null
-  } else if (jogador === 3 && jogadaPlayer3.value) {
-    cartasTopo.value.push(jogadaPlayer3.value)
-    jogadaPlayer3.value = null
-  } else if (jogador === 4 && jogadaPlayer4.value) {
-    cartasDireita.value.push(jogadaPlayer4.value)
-    jogadaPlayer4.value = null
-  }
-}
-
 const pescarCarta = () => {
   const carta = baralho.value.pop()
   cartasBaixo.value.push(carta)
@@ -200,11 +184,11 @@ onMounted(() => {
       </div>
       <div class="h-full w-full rounded-xl flex items-center justify-center">
 
-        <div class="w-full flex justify-center items-center " @click="tiraCarta(2)">
+        <div class="w-full flex justify-center items-center ">
           <Carta horizontal :carta="jogadaPlayer2" />
         </div>
         <div class="h-full w-1/3 flex flex-col items-center justify-center">
-          <div class="h-full flex items-center" @click="tiraCarta(3)">
+          <div class="h-full flex items-center">
             <Carta :carta="jogadaPlayer3" />
           </div>
           <div class="flex items-center justify-center">
@@ -214,11 +198,11 @@ onMounted(() => {
             <!-- </div> -->
             <Carta v-if="vira" :carta="vira" />
           </div>
-          <div class="h-full flex flex-col justify-center items-center " @click="tiraCarta(1)">
+          <div class="h-full flex flex-col justify-center items-center ">
             <Carta :carta="jogadaPlayer1" />
           </div>
         </div>
-        <div class="w-full flex justify-center items-center " @click="tiraCarta(4)">
+        <div class="w-full flex justify-center items-center ">
           <Carta horizontal :carta="jogadaPlayer4" />
         </div>
       </div>
