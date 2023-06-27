@@ -19,7 +19,6 @@ const retornaImagem = (carta) => {
 		naipe = 'DIAMOND'
 	}
 	if (carta.naipe.nome === 'ESPADAS') {
-		console.log(props.carta + 'xx')
 		naipe = 'SPADE'
 	}
 	if (carta.naipe.nome === 'COPAS') {
@@ -31,7 +30,7 @@ const retornaImagem = (carta) => {
 	let valor = ''
 	if (carta) {
 		valor = carta.valor
-		return `src/assets/cards/${naipe}-${valor}.svg`
+		return `./cards/${naipe}-${valor}.svg`
 	}
 	return ''
 }
