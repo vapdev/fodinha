@@ -181,38 +181,37 @@ onMounted(() => {
   <div class="bg-green-300 w-[100%] h-[100vh] flex">
 
     <div class="w-[14%] bg-green-800 flex flex-col items-center justify-center">
-      <div class="w-6 h-6 bg-yellow-300 rounded-full" v-if="turno == 2"></div>
-      <div class="text-xl">Player 2</div>
-      <div v-for="carta in cartasEsquerda" @click="jogaCarta(carta, 2)">
-        <Carta horizontal :carta="carta" />
-      </div>
+      <div class="text-[1vw]">Player 2</div>
+      <Carta v-for="carta in cartasEsquerda" horizontal :carta="carta" @click="jogaCarta(carta, 2)" />
+      <div class="w-[1vw] h-[1vw] bg-yellow-300 rounded-full" v-if="turno == 2"></div>
     </div>
 
     <div class="w-full flex flex-col  bg-green-800">
       <div class="h-1/3 bg-green-800 flex justify-center items-center">
         <div class="flex items-center flex-col">
-          <div class="text-xl">Player 3</div>
-          <div class="w-6 h-6 bg-yellow-300 rounded-full" v-if="turno == 3"></div>
+          <div class="text-[1vw]">Player 3</div>
           <div class="flex flex-row">
             <div v-for="carta in cartasTopo" @click="jogaCarta(carta, 3)">
               <Carta :carta="carta" />
             </div>
+            <div class="w-[1vw] h-[1vw] bg-yellow-300 rounded-full" v-if="turno == 3"></div>
           </div>
         </div>
       </div>
-      <div class="h-full w-full bg-green-800 rounded-xl flex items-center justify-center">
+      <div class="h-full w-full rounded-xl flex items-center justify-center">
 
         <div class="w-full flex justify-center items-center " @click="tiraCarta(2)">
           <Carta horizontal :carta="jogadaPlayer2" />
         </div>
         <div class="h-full w-1/3 flex flex-col items-center justify-center">
-          <div class="h-full flex flex-col justify-center items-center " @click="tiraCarta(3)">
+          <div class="h-full flex items-center" @click="tiraCarta(3)">
             <Carta :carta="jogadaPlayer3" />
           </div>
-          <div class="w-60 flex items-center justify-center">
-            <div class="border-black border-4 bg-pink-300 w-20 h-28 mx-2 flex items-center justify-center">
-              {{ baralho.length }}
-            </div>
+          <div class="flex items-center justify-center">
+            <!-- <div class="w-[5vw] text-[1vw] flex items-center justify-center"> -->
+              <!-- {{ baralho.length }} -->
+              <Carta v-if="vira" :carta="vira" />
+            <!-- </div> -->
             <Carta v-if="vira" :carta="vira" />
           </div>
           <div class="h-full flex flex-col justify-center items-center " @click="tiraCarta(1)">
@@ -229,19 +228,19 @@ onMounted(() => {
             <div v-for="carta in cartasBaixo" @click="jogaCarta(carta, 1)">
               <Carta :carta="carta" />
             </div>
+            <div class="w-[1vw] h-[1vw] bg-yellow-300 rounded-full" v-if="turno == 1"></div>
           </div>
-          <div class="text-xl">Player 1</div>
-          <div class="w-6 h-6 bg-yellow-300 rounded-full" v-if="turno == 1"></div>
+          <div class="text-[1vw]">Player 1</div>
         </div>
       </div>
     </div>
 
     <div class="w-[14%]  bg-green-800 flex flex-col items-center justify-center">
-      <div class="w-6 h-6 bg-yellow-300 rounded-full" v-if="turno == 4"></div>
-      <div class="text-xl">Player 4</div>
+      <div class="text-[1vw]">Player 4</div>
       <div v-for="carta in cartasDireita" @click="jogaCarta(carta, 4)">
         <Carta horizontal :carta="carta" />
       </div>
+      <div class="w-[1vw] h-[1vw] bg-yellow-300 rounded-full" v-if="turno == 4"></div>
     </div>
 
   </div>

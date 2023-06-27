@@ -39,7 +39,5 @@ const retornaImagem = (carta) => {
 </script>
 
 <template>
-	<div>
-		<img :class="horizontal ? 'rotate-90' : 'mx-4'" class="w-[5vw]" :src="retornaImagem(carta)" />
-	</div>
+	<img :class="horizontal ? 'rotate-90 -my-[0.5vw]' : 'mx-[0.5vw]'" class="w-[5vw]" :src="retornaImagem(carta)" />
 </template>
