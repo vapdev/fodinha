@@ -7,86 +7,88 @@
                 <span>5</span>
             </div>
         </div>
-        <div class="bg-green-800 h-[30%] p-[1.5%] flex flex-col">
-            <div class="text-center text-[2vh]">Informações da partida atual</div>
-            <div class="border-[0.1vh] my-[1vh]"></div>
-            <div class="flex justify-around text-[2vh]">
-                <div>Time 1</div>
-                <div>Time 2</div>
-            </div>
-            <div class="flex justify-around mt-[1vh]">
-                <div>
-                    <div class="bg-green-800 h-[25%] text-black">
-                        <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
-                            <div class="flex justify-around">
-                                <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-green-800 h-[25%] text-black">
-                        <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
-                            <div class="flex justify-around">
-                                <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-green-800 h-[25%] text-black">
-                        <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
-                            <div class="flex justify-around">
-                                <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-green-800 h-[25%] text-black">
-                        <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
-                            <div class="flex justify-around">
-                                <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="bg-green-800">
+            <div class="bg-green-800 h-[30%] p-[1.5%] flex flex-col">
+                <div class="text-center text-[2vh]">Informações da partida atual</div>
+                <div class="border-[0.1vh] my-[1vh]"></div>
+                <div class="flex justify-around text-[2vh]">
+                    <div>Time A</div>
+                    <div>Time B</div>
                 </div>
-                <div>
-                    <div class="bg-green-800 h-[25%] text-black">
-                        <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
-                            <div class="flex justify-around">
-                                <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
+                <div class="flex justify-around mt-[1vh]">
+                    <div>
+                        <div class="bg-green-800 h-[25%] text-black">
+                            <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
+                                <div class="flex justify-around">
+                                    <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-green-800 h-[25%] text-black">
+                            <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
+                                <div class="flex justify-around">
+                                    <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-green-800 h-[25%] text-black">
+                            <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
+                                <div class="flex justify-around">
+                                    <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-green-800 h-[25%] text-black">
+                            <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
+                                <div class="flex justify-around">
+                                    <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-green-800 h-[25%] text-black">
-                        <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
-                            <div class="flex justify-around">
-                                <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
+                    <div>
+                        <div class="bg-green-800 h-[25%] text-black">
+                            <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
+                                <div class="flex justify-around">
+                                    <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="bg-green-800 h-[25%] text-black">
-                        <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
-                            <div class="flex justify-around">
-                                <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
+                        <div class="bg-green-800 h-[25%] text-black">
+                            <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
+                                <div class="flex justify-around">
+                                    <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="bg-green-800 h-[25%] text-black">
-                        <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
-                            <div class="flex justify-around">
-                                <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
-                                <div class="border-white border-[0.2vh] w-[33%]"></div>
+                        <div class="bg-green-800 h-[25%] text-black">
+                            <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
+                                <div class="flex justify-around">
+                                    <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-green-800 h-[25%] text-black">
+                            <div class="border-white border-[0.2vh] w-[6vw] h-[2vw]">
+                                <div class="flex justify-around">
+                                    <div class="border-white border-[0.2vh] w-[33%] h-[2vw]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                    <div class="border-white border-[0.2vh] w-[33%]"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
