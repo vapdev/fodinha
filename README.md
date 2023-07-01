@@ -1,6 +1,9 @@
 # fodinha
 
 Jogue Truco Online na web!
+
+https://trucoonline.vercel.app/
+
 ![image](https://github.com/vapdev/truco/assets/88452580/030214b5-5140-45d4-895c-a3b5767744d4)
 
 WORK IN PROGRESS
